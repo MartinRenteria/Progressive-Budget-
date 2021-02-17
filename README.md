@@ -4,10 +4,9 @@
 
 Please note this application is currently a work in progress and updates will occur within the next few days so keep an eye out for the finished product!
 
-<br> <br>
+This is a budget tracking system that allows the user to add expenses and deposits to thier budget. The application has an offline access functionality. When entering transactions offline, the transactions will be added to the total when the application comes back online.  
 
 <br> <br>
-
 
 ## Table of Contents
 
@@ -20,7 +19,7 @@ Please note this application is currently a work in progress and updates will oc
 
 Here is a photo of the Progressive Budget application.
 
-![Progressive-Budget]()
+![Progressive-Budget](public/icons/offline-finance-tracker.herokuapp.com_.png)
 
 # Link
 Look at the live version through Heroku [here.](https://offline-finance-tracker.herokuapp.com/)
