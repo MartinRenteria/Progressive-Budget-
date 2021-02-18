@@ -6,7 +6,7 @@ Please note this application is currently a work in progress and updates will oc
 
 This is a budget tracking system that allows the user to add expenses and deposits to thier budget. The application has an offline access functionality. When entering transactions offline, the transactions will be added to the total when the application comes back online.  
 
-<br> <br>
+<br>
 
 ## Table of Contents
 
