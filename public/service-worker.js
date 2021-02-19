@@ -40,3 +40,35 @@ self.addEventListener("activate", e => {
 });
   
 // Asking access to data by fetching
+self.addEventListener("fetch", e => {
+    if (e.request.url.includes("/api/")) {
+      e.respondWith(
+        caches.open(BUDGET_DATA).then(cache => {
+          return fetch(e.request)
+            .then(response => {
+              // If the response was good, clone it and store it in the cache.
+              if (response.status === 200) {
+                cache.put(e.request.url, response.clone());
+              }
+  
+              return response;
+            })
+            // if  request fails, try to get data from the cache.
+            .catch(err => {
+              
+              return cache.match(e.request);
+            });
+        }).catch(err => console.log(err))
+      );
+  
+      return;
+    }
+   // Fetch data response
+    e.respondWith(
+      caches.open(STATIC_BUDGET).then(cache => {
+        return cache.match(e.request).then(response => {
+          return response || fetch(e.request);
+        });
+      })
+    );
+  });
