@@ -2,9 +2,10 @@
 
 ## **Description**
 
-Please note this application is currently a work in progress and updates will occur within the next few days so keep an eye out for the finished product!
+This is a budget tracking system that allows the user to add expenses and deposits to thier budget. Through a line graph, the app displays the user's transactions as their budget is spent and added to it. The application has an offline access functionality.
+I synced the app through indexDB so that the user can continue to use the app if they are offline. When entering transactions offline, the transactions will be added to the total and then be stored with MongoDB when the application comes back online. My project is deployed through heroku. 
 
-This is a budget tracking system that allows the user to add expenses and deposits to thier budget. The application has an offline access functionality. When entering transactions offline, the transactions will be added to the total when the application comes back online.  
+The application uses Express.JS for establishing API routes and uses MongoDB as it's database. My frontend is built upon HTML, CSS, Javascript and chart.js. 
 
 <br>
 

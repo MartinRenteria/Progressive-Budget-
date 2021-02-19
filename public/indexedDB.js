@@ -33,40 +33,39 @@ const saveTransaction = (data) => {
 };
 
 function checkDatabase() {
-    // Open a transaction on your store db
-    const transaction = db.transaction(["transaction"], "readwrite");
-    // Access your pending object store
-    const store = transaction.objectStore("transaction");
-    // Get all records from store and set to a variable
-    const getAll = store.getAll();
-  
-    getAll.onsuccess =  async () => {
-        try {
-            if (getAll.result.length > 0) {
-                const response = await fetch("/api/transaction/bulk", {
-                  method: "POST",
-                  body: JSON.stringify(getAll.result),
-                  headers: {
-                    Accept: "application/json, text/plain, */*",
-                    "Content-Type": "application/json"
-                  }
-                })
-                response.json()
-                
-                const transaction = db.transaction(["transaction"], "readwrite");
-        
-                // Access your transaction object store
-                 const store = transaction.objectStore("transaction");
-          
-                // Clear all items in your store
-                store.clear();
-              }
-        } catch (error) {
-            console.log(`Error ${error}`);
-        }
-      
-    };
-  }
-  
-  // Listen for the app to come back online.
-  window.addEventListener("online", checkDatabase);
+	// Open a transaction on your store db
+	const transaction = db.transaction([ "transaction" ], "readwrite");
+	// Access your pending object store
+	const store = transaction.objectStore("transaction");
+	// Get all records from store and set to a variable
+	const getAll = store.getAll();
+
+	getAll.onsuccess = async () => {
+		try {
+			if (getAll.result.length > 0) {
+				const response = await fetch("/api/transaction/bulk", {
+					method: "POST",
+					body: JSON.stringify(getAll.result),
+					headers: {
+						Accept: "application/json, text/plain, */*",
+						"Content-Type": "application/json"
+					}
+				});
+				response.json();
+
+				const transaction = db.transaction([ "transaction" ], "readwrite");
+
+				// Access your transaction object store
+				const store = transaction.objectStore("transaction");
+
+				// Clear all items in your store
+				store.clear();
+			}
+		} catch (error) {
+			console.log(`Error ${error}`);
+		}
+	};
+}
+
+// Listen for the app to come back online.
+window.addEventListener("online", checkDatabase);
