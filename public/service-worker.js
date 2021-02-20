@@ -8,18 +8,19 @@ const FILES_TO_CACHE = [
 	"/styles.css",
     "/index.js",
     "/indexDB.js",
-	"/icons/icon-192x192.png"
+	"/icons/icon-192x192.png",
+    "/icons/icon-512x512.png"
 ];
 
 // Adds data to cache using an async function
-self.addEventListener("install", async (evt)=> {
+self.addEventListener("install", async (e)=> {
     // pre cache image data
-    evt.waitUntil(
+    e.waitUntil(
         caches.open(BUDGET_DATA).then((cache) => cache.add("/api/transaction"))
     );
         
     // pre cache all static assets
-    evt.waitUntil(
+    e.waitUntil(
         caches.open(STATIC_BUDGET).then((cache) => cache.addAll(FILES_TO_CACHE))
     );
     self.skipWaiting()
