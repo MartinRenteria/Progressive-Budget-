@@ -13,19 +13,16 @@ const FILES_TO_CACHE = [
 ];
 
 // Adds data to cache using an async function
-self.addEventListener("install", async (e)=> {
-    // pre cache image data
-    e.waitUntil(
-        caches.open(BUDGET_DATA).then((cache) => cache.add("/api/transaction"))
-    );
-        
-    // pre cache all static assets
-    e.waitUntil(
-        caches.open(STATIC_BUDGET).then((cache) => cache.addAll(FILES_TO_CACHE))
-    );
-    self.skipWaiting()
-});
-
+self.addEventListener("install", async (e) => {
+    const budgetData = await caches.open(BUDGET_DATA);
+    await budgetData.add("/api/transaction");
+  
+    const staticBudget = await caches.open(STATIC_BUDGET);
+    await staticBudget.addAll(FILES_TO_CACHE);
+  
+    self.skipWaiting();
+  });
+  
 // Sets-up service worker and turns it "on"
 self.addEventListener("activate", (e) => {
 	e.waitUntil(
