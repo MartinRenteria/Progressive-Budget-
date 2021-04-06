@@ -11,11 +11,20 @@ The application uses Express.JS for establishing API routes and uses MongoDB as 
 
 ## Table of Contents
 
+* [Technology](#Techs Used)
 * [Installation](#Installation)
 * [Screenshot](#screenshot)
 * [Link](#link)
 * [License](#license)
 * [Questions](#questions)
+
+## Technology
+
+- [MongoDB] - Database used for saving saved book information.
+- [Mongoose] - For creating MongoDB schemas in conjunction with MongoDB
+- [Express] -  Back-end server for rendering API calls. 
+- [node.js] - Evented I/O for the backend.
+- [Heroku] - For deployment.
 
 ## Installation
 
