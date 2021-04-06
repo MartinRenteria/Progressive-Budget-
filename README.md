@@ -11,10 +11,17 @@ The application uses Express.JS for establishing API routes and uses MongoDB as 
 
 ## Table of Contents
 
+* [Installation](#Installation)
 * [Screenshot](#screenshot)
 * [Link](#link)
 * [License](#license)
 * [Questions](#questions)
+
+## Installation
+
+      To work with the application from the backend:
+            1. In your terminal for the project, run `npm i` to install necessary NPM packages.
+            2. Run `npm run start` to start the server.
 
 ## **Screenshot**
 
