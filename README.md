@@ -11,7 +11,7 @@ The application uses Express.JS for establishing API routes and uses MongoDB as 
 
 ## Table of Contents
 
-* [Technology](#Techs Used)
+* [Technology](#Technology)
 * [Installation](#Installation)
 * [Screenshot](#screenshot)
 * [Link](#link)
